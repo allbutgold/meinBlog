@@ -1,9 +1,11 @@
+import styles from './BlogEintrag.module.scss'
+
 const BlogEintrag = ({ post }) => {
   return (
-    <div>
-      <h2>{post.title}</h2>\
+    <div className={styles.BlogEintrag}>
+      <h2>{post.title}</h2>
       <p>{post.text}</p>
-      <img src={`http://localhoste:9999${post.posImage}`} />
+      <img src={`http://localhost:9999/${post.postImage}`} />
     </div>
   )
 }

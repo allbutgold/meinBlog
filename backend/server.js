@@ -3,11 +3,13 @@ import cors from 'cors';
 import multer from 'multer';
 import { load, save } from './utility/fileHandler.js'
 
+
 const app = express();
 const PORT = 9999
+const upload = multer({ dest: './img' })
 
-app.use(express.json())
 app.use(cors({ origin: "http://localhost:5173" }))
+app.use('/img', express.static('./img'))
 
 app.get('/api/v1/getPosts', (req, res) => {
   load()
@@ -15,8 +17,11 @@ app.get('/api/v1/getPosts', (req, res) => {
   .catch(err => console.log(err))
 })
 
-app.post('/api/v1/addPost', (req, res) => {
+app.post('/api/v1/addPost', upload.single('postImage'), (req, res) => {
   const data = req.body
+  data.postImage = req.file.path
+  console.log(req.file)
+
   save(data)
   .then(newData => res.json(newData))
   .catch(err => console.log(err))
