@@ -1,11 +1,12 @@
 
 
 const InputForm = ({ setPosts }) => {
+  
   const handleSubmit = (e) => {
     e.preventDefault()
     const formData = new FormData(e.target)
 
-    fetch('http://localhost:9999/api/addPost', {
+    fetch('http://localhost:9999/api/v1/addPost', {
       method: 'POST',
       body: formData
     })
@@ -27,3 +28,5 @@ const InputForm = ({ setPosts }) => {
     </div>
   )
 }
+
+export default InputForm
