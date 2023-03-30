@@ -21,7 +21,7 @@ const InputForm = ({ setPosts }) => {
     <div>
       <form onSubmit={handleSubmit}>
       <input type="text" name="title" placeholder="Title"></input>
-      <input type="text" name="text" placeholder="Text"></input>
+      <input style={{margin: "20px"}} type="text" name="text" placeholder="Text"></input>
       <input type="file" name="postImage"></input>
       <button type="submit">upload</button>
       </form>

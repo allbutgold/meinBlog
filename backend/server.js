@@ -17,6 +17,17 @@ app.get('/api/v1/getPosts', (req, res) => {
   .catch(err => console.log(err))
 })
 
+app.get('/api/v1/getPosts/:id', (req, res) => {
+  const id = req.params.id
+  load()
+  .then(data => {
+  const singlePost = data.find(post => post.id === id)
+  res.json(singlePost) 
+})
+
+  .catch(err => console.log(err))
+})
+
 app.post('/api/v1/addPost', upload.single('postImage'), (req, res) => {
   const data = req.body
   data.postImage = req.file.path

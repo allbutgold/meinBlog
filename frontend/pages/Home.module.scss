@@ -1,0 +1,28 @@
+.Home {
+  width: 90vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    width: 80vw;
+    margin: auto auto 100px auto;
+  }
+  div {
+    a {
+      margin-bottom: 200px;
+      color: aliceblue;
+      div {
+
+        padding: 0;
+        width: 350px;
+        margin-bottom: 100px;
+        h2 {
+          margin: auto 0 20px;
+          text-align: center;
+
+        }
+      }
+    }
+  }
+}

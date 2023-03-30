@@ -5,6 +5,7 @@ const DB_PATH = './database.json'
 export function save(item) {
   return new Promise((resolve, reject) =>{
     load().then(data => {
+      item.id = `${data.length + 1}`
       data.push(item)
       fs.writeFile(DB_PATH, JSON.stringify(data), (err) => {
         if (err) reject(err)
