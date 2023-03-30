@@ -6,7 +6,7 @@
  - [ ] Admin Seite zum erstellen der Blogeinträge mit einer Form und publish button
 
 # components
-- [ ] input form 
+- [ ] input form with title image and text
 - [ ] Blog Eintrag 
 - [ ] Blog ubersicht Element
 
