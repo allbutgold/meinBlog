@@ -20,9 +20,6 @@ const BlogDetailPage = () => {
         <BlogEintrag post={posts}/>
         <Link to='/'>Back</Link>
     </div>
-
-
-
   )
 
 }
