@@ -2,10 +2,11 @@ import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import BlogPreview from '../components/BlogPreview.jsx'
 
+const API_URL = import.meta.env.VITE_API_URL
 const BlogPreviewList = ({ setPosts, posts}) => {
 
   useEffect(() => {
-    fetch('http://localhost:9999/api/v1/getPosts')
+    fetch(`${API_URL}/api/v1/getPosts`)
     .then(res => res.json())
     .then(data => setPosts(data))
   }, [])
