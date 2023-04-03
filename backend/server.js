@@ -8,7 +8,7 @@ const app = express();
 const PORT = process.env.PORT || 9999
 const upload = multer({ dest: './img' })
 
-app.use(cors({ origin: "http://localhost:5173" }))
+app.use(cors({ origin: "*" }))
 app.use('/img', express.static('./img'))
 
 app.get('/api/v1/getPosts', (req, res) => {
