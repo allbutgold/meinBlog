@@ -5,7 +5,7 @@ import { load, save } from './utility/fileHandler.js'
 
 
 const app = express();
-const PORT = 9999
+const PORT = process.env.PORT || 9999
 const upload = multer({ dest: './img' })
 
 app.use(cors({ origin: "http://localhost:5173" }))
