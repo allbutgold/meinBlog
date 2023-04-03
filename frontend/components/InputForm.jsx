@@ -8,7 +8,7 @@ const InputForm = ({ setPosts }) => {
 
     const API_URL = import.meta.env.VITE_API_URL
 
-    fetch(`${API_URL}/api/v1/addPost`, {
+    fetch(`${API_URL}api/v1/addPost`, {
       method: 'POST',
       body: formData
     })

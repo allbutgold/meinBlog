@@ -6,7 +6,7 @@ const API_URL = import.meta.env.VITE_API_URL
 const BlogListElement = ({ setPosts, posts}) => {
 
   useEffect(() => {
-    fetch(`${API_URL}/api/v1/getPosts`)
+    fetch(`${API_URL}api/v1/getPosts`)
     .then(res => res.json())
     .then(data => setPosts(data))
   }, [])
