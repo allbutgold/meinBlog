@@ -4,6 +4,8 @@ const Navigation = () => {
   return (
     <section>
       <nav>
+        <Link to='/'>Home</Link>
+        <Link to='/contact'>Contact</Link>
         <Link to='/adminPage'>Admin</Link>
       </nav>
   </section>

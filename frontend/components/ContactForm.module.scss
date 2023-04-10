@@ -1,0 +1,16 @@
+.ContactForm {
+  form {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;  
+    input {
+      margin: auto;
+    }
+    textarea {
+      margin: 30px auto 30px auto;
+    }
+  }
+
+}

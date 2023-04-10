@@ -9,12 +9,9 @@ const Home = () => {
 
   return (
     <section className={styles.Home}>
-      {/* <img src={logo} style={{width: '200px'}}/> */}
       <h1>Leo's travel blog</h1>
       <BlogPreviewList posts={posts} setPosts={setPosts} />
-{/*       <BlogEintrag /> */}
-      <ContactForm/>
-    
+{/*       <BlogEintrag /> */}    
     </section>
   )
 

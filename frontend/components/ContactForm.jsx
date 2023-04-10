@@ -1,3 +1,4 @@
+import style from './ContactForm.module.scss'
 
 const ContactForm = () => {
 
@@ -19,11 +20,14 @@ const ContactForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div className={style.ContactForm}>
+      <form onSubmit={handleSubmit}>
       <input name="email" type="email" placeholder="Email" />
       <textarea name="mailContent" cols="30" rows="10" type="text"></textarea>
       <button type='submit'>send</button>
-  </form>
+      </form>
+    </div>
+
   )
 } 
 
