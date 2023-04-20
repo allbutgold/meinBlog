@@ -1,26 +1,40 @@
+import './config/config.js'
 import express from 'express';
 import cors from 'cors';
 import multer from 'multer';
-import { load, save } from './utility/fileHandler.js'
+import cookieParser from 'cookie-parser';
+import morgan from 'morgan';
 import nodemailer from 'nodemailer';
-import './config/config.js'
-
+import { load, save } from './utility/fileHandler.js'
+import { login, register } from './controller/authController.js'
+import { encryptPassword } from './middleware/authMiddleware.js';
 
 
 
 const app = express();
 const PORT = process.env.PORT || 9999
 const upload = multer({ dest: './img' })
-// const uploadEmail = multer()
 
-app.use(cors({ origin: "*" }))
+
+app.use(cors({
+    origin: true,
+    credentials: true
+}))
+
 app.use('/img', express.static('./img'))
+app.use(express.json())
+app.use(cookieParser())
+
+app.get('/', (req, res) => {
+  res.status(200).send('All good')
+})
+
+app.post('/register', encryptPassword, register)
+app.post('/login', encryptPassword, login)
 
 // nodemailer
 const  NODEMAILER_USER = process.env.NODEMAILER_USER
 const  NODEMAILER_PASSWORD = process.env.NODEMAILER_PASSWORD
-
-
 
 const transport = nodemailer.createTransport({
   host: "sandbox.smtp.mailtrap.io",

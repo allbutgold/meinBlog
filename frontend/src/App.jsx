@@ -1,6 +1,10 @@
-import './App.css'
+import styles from './App.module.scss'
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { useState } from 'react'
+
+import  Login  from '../components/Login.jsx'
+
 
 import AdminPage from '../pages/AdminPage.jsx'
 import Home from '../pages/Home.jsx'
@@ -10,23 +14,20 @@ import ContactForm from '../components/ContactForm.jsx'
 
 
 function App() {
-
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
 
   return (
-    <main className="App">
+    <main className={styles.App}>
       <Router>
       <Navigation />
         <Routes>
           <Route path="/" element={<Home/>} />
-          <Route path="/adminpage" element={<AdminPage />} />
+          <Route path="/adminPage" element={isLoggedIn ? <AdminPage/> : <Login setIsLoggedIn={setIsLoggedIn}/>} />
           <Route path="/blogdetailpage/:id" element={<BlogDetailPage />}/>
           <Route path="/contact" element={<ContactForm />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
-
       </Router>
-      
-
-
     </main>
   )
 } 
