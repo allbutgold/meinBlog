@@ -3,11 +3,12 @@ import { useState } from 'react'
 function Register () {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
-  
+  const url = import.meta.env.VITE_BACKEND_URL
+
   const SubmitRegister = async (e) => {
     e.preventDefault()
 
-    const result = await fetch('http://localhost:9999/register', {
+    const result = await fetch(url + 'register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

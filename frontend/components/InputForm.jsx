@@ -6,7 +6,7 @@ const InputForm = ({ setPosts }) => {
     e.preventDefault()
     const formData = new FormData(e.target)
 
-    const API_URL = import.meta.env.VITE_API_URL
+    const API_URL = import.meta.env.VITE_BACKEND_URL
 
     fetch(`${API_URL}api/v1/addPost`, {
       method: 'POST',

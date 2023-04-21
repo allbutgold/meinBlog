@@ -3,11 +3,10 @@ import express from 'express';
 import cors from 'cors';
 import multer from 'multer';
 import cookieParser from 'cookie-parser';
-import morgan from 'morgan';
 import nodemailer from 'nodemailer';
 import { load, save } from './utility/fileHandler.js'
 import { login, register } from './controller/authController.js'
-import { encryptPassword } from './middleware/authMiddleware.js';
+import { encryptPassword, verifyToken } from './middleware/authMiddleware.js';
 
 
 
@@ -31,6 +30,11 @@ app.get('/', (req, res) => {
 
 app.post('/register', encryptPassword, register)
 app.post('/login', encryptPassword, login)
+
+app.get('/user', verifyToken, (req, res) => {
+	console.log(req.user)
+res.end()
+})
 
 // nodemailer
 const  NODEMAILER_USER = process.env.NODEMAILER_USER

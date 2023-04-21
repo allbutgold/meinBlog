@@ -2,11 +2,12 @@ import { useState } from 'react'
 function Login({setIsLoggedIn}) {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const url = import.meta.env.VITE_BACKEND_URL
 
   const SubmitLogin = async (e) => {
     e.preventDefault()
     
-    const result = await fetch('http://localhost:9999/login', {
+    const result = await fetch(url + 'login', {
       method: 'POST',
       credentials: 'include',
       headers: {
