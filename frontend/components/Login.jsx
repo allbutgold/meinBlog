@@ -26,11 +26,11 @@ function Login({setIsLoggedIn}) {
         <div>
           <h2>Login</h2>
           <form>
-            <label htmlFor="username">username</label>
-            <input type="text" name="username" value={username} onChange={(e) => setUsername(e.target.value)}/>
-            <label htmlFor="password">password</label>
-            <input type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
-            <button onClick={SubmitLogin}>Login</button>
+            <label style={{padding: '10px'}} htmlFor="username">username</label>
+            <input type="text" name="username" value={username} onChange={(e) => setUsername(e.target.value)}/><br/>
+            <label style={{padding: '10px'}} htmlFor="password">password</label>
+            <input  type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)}/><br/>
+            <button style={{margin: '10px'}} onClick={SubmitLogin}>Login</button>
           </form>
         </div>
 

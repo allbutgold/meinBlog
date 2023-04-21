@@ -1,7 +1,11 @@
 .Navigation {
+  width: 400px;
+  margin: 20px auto;
+  height: 50px;
+
   nav {
   display: flex;
-  justify-content: space-between ;
+  justify-content: space-around ;
   a {
     width: 100px;
     color: aliceblue;
