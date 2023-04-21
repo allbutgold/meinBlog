@@ -10,7 +10,7 @@ const BlogDetailPage = () => {
   const API_URL = import.meta.env.VITE_BACKEND_URL
 
   useEffect(() => {
-    fetch(`${API_URL}/api/v1/getPosts/${id}`)
+    fetch(`${API_URL}api/v1/getPosts/${id}`)
     .then(res => res.json())
     .then(data => setPosts(data))
   }, [])
