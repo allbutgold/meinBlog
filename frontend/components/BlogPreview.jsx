@@ -5,12 +5,10 @@ const API_URL = import.meta.env.VITE_BACKEND_URL
 
 const BlogEintrag = ({ post }) => {
   return (
-    <Link to={"/blogdetailpage/" + post.id}>
+    <Link key={post._id} to={"/blogdetailpage/" + post._id}>
       <div className={styles.BlogPreview}>
       <h2>{post.title}</h2>
-      <img src={`${API_URL}${post.postImage}`} />
-
-
+      <img src={`${API_URL}${post.image}`} />
     </div>
     </Link>
 

@@ -12,12 +12,12 @@ const BlogListElement = ({ setPosts, posts}) => {
   }, [])
 
   if(!posts) return
-
+console.log(posts)
   return (
     <div>
           {posts.map((post) => {
       return (
-        <BlogEintrag post={post}/>
+        <BlogEintrag key={post._id} post={post}/>
       )
     })}
     </div>

@@ -17,10 +17,7 @@ const BlogPreviewList = ({ setPosts, posts}) => {
     <div>
           {posts.map((post) => {
       return (
-        <Link to={`/blogdetailpage/ + ${posts.id}`}>
-          <BlogPreview post={post}/>
-        </Link>
-
+          <BlogPreview key={post._id} post={post}/>
       )
     })}
     </div>

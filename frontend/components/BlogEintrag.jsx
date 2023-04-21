@@ -6,7 +6,7 @@ const BlogEintrag = ({ post }) => {
   return (
     <div className={styles.BlogEintrag}>
       <h2>{post.title}</h2>
-      <img src={`${API_URL}${post.postImage}`} />
+      <img src={`${API_URL}${post.image}`} />
       <p>{post.text}</p>
 
     </div>

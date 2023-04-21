@@ -7,6 +7,7 @@ import nodemailer from 'nodemailer';
 import { load, save } from './utility/fileHandler.js'
 import { login, register } from './controller/authController.js'
 import { encryptPassword, verifyToken } from './middleware/authMiddleware.js';
+import { addPost, getPosts, getPostById } from './utility/postController.js';
 
 
 
@@ -76,32 +77,11 @@ app.post('/api/v1/sendEmail', upload.none(), (req, res) => {
   })
 })
 
+app.get('/api/v1/getPosts', getPosts)
 
-app.get('/api/v1/getPosts', (req, res) => {
-  load()
-  .then(data => res.json(data))
-  .catch(err => console.log(err))
-})
+app.get('/api/v1/getPosts/:id', getPostById)
 
-app.get('/api/v1/getPosts/:id', (req, res) => {
-  const id = req.params.id
-  load()
-  .then(data => {
-  const singlePost = data.find(post => post.id === id)
-  res.json(singlePost) 
-})
+app.post('/api/v1/addPost',upload.single('postImage'), addPost)
 
-  .catch(err => console.log(err))
-})
-
-app.post('/api/v1/addPost', upload.single('postImage'), (req, res) => {
-  const data = req.body
-  data.postImage = req.file.path
-  console.log(req.file)
-
-  save(data)
-  .then(newData => res.json(newData))
-  .catch(err => console.log(err))
-})
 
 app.listen(PORT, () => console.log('listening on port ' + PORT))
