@@ -1,9 +1,11 @@
 import {Link} from 'react-router-dom'
 import styles from './Navigation.module.scss'
+import Logo from '../src/assets/logo.png'
 
 const Navigation = () => {
   return (
     <section className={styles.Navigation}>
+      <img src={Logo} style={{ left: 0}} alt="" />
       <nav>
         <Link to='/'>Home</Link>
         <Link to='/blog'>Blog</Link>

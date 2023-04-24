@@ -7,11 +7,10 @@ const Home = () => {
 
   return (
     <section className={styles.Home}>
-      <h1>Leo's travel blog</h1>
-      <BlogPreviewList posts={posts} setPosts={setPosts} /> 
+      <BlogPreviewList className={styles.gridItem} posts={posts} setPosts={setPosts} /> 
     </section>
   )
 
 }
 
-export default Home
+export default Home 

@@ -23,7 +23,7 @@ function Login({setIsLoggedIn}) {
     }}
     
       return (
-        <div>
+        <div style={{'margin-top': "120px"}}>
           <h2>Login</h2>
           <form>
             <label style={{padding: '10px'}} htmlFor="username">username</label>
