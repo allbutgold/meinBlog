@@ -4,7 +4,6 @@ import cors from 'cors';
 import multer from 'multer';
 import cookieParser from 'cookie-parser';
 import nodemailer from 'nodemailer';
-import { load, save } from './utility/fileHandler.js'
 import { login, register } from './controller/authController.js'
 import { encryptPassword, verifyToken } from './middleware/authMiddleware.js';
 import { addPost, getPosts, getPostById } from './utility/postController.js';
