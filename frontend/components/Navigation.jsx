@@ -1,6 +1,6 @@
 import {Link} from 'react-router-dom'
 import styles from './Navigation.module.scss'
-import Logo from '../src/assets/logo.png'
+import Logo from '../src/assets/Logo.png'
 
 const Navigation = () => {
   return (
