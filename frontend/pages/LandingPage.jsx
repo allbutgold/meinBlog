@@ -23,7 +23,7 @@ const LandingPage = () => {
     .then(res => res.json())
     .then(data => {
       setImage(data);
-      setRandomIndex();
+      setCurrentImageIndex(Math.floor(Math.random() * data.length));
     })
   }, []);
 
