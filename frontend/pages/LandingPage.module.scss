@@ -1,0 +1,40 @@
+.LandingPage {
+  /* position: relative;
+  overflow: hidden; */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes fadeOut
+  {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+}
+
+.prevImage,
+.currentImage {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.prevImage {
+  animation: fadeOut 2s linear forwards;
+}
+
+.currentImage {
+  animation: fadeIn 2s linear forwards;
+}

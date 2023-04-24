@@ -6,6 +6,7 @@ const Navigation = () => {
     <section className={styles.Navigation}>
       <nav>
         <Link to='/'>Home</Link>
+        <Link to='/blog'>Blog</Link>
         <Link to='/contact'>Contact</Link>
         <Link to='/adminPage'>Admin</Link>
       </nav>

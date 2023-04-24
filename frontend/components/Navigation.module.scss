@@ -1,14 +1,18 @@
 .Navigation {
-  width: 400px;
-  margin: 20px auto;
-  height: 50px;
-
-  nav {
   display: flex;
-  justify-content: space-around ;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  margin: auto;
+  nav {
+    width: 400px;
+    height: 50px;
+    display: flex;
+    justify-content: space-around ;
+    align-items: center;
   a {
+    margin: auto 0 auto 0;
     width: 100px;
-    color: aliceblue;
   }
 }
 }
