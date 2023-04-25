@@ -27,13 +27,16 @@ export const getPostById = async (req, res) => {
 }
 
 export const addPost = async (req, res) => {
+  /* if (req.user.role !== 'admin' && req.user.role !== 'editor') */ 
   try {
     req.body.image = req.file.path
     const db = await getDb()
     const result = await db.collection(COL).insertOne(req.body)
-    
+    console.log(result)
+    res.json({message: 'success'})
   }catch(err) {
     console.log(err)
-    res.sendStatus(500)
+    res.status(500).end()
   }
 }
+

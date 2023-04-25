@@ -11,7 +11,7 @@ const AdminPage = () => {
 
   return (
 
-    <section style={{'margin-top': "120px"}}>
+    <section style={{'marginTop': "120px"}}>
       <h1>Admin Page</h1>
       <h3>Make new admin account</h3>
       <Register />

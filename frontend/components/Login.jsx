@@ -13,12 +13,12 @@ function Login({setIsLoggedIn}) {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({user: 'test', password: 'test'})
+      body: JSON.stringify({username: username, password: password})
     })
     const data = await result.json()
-    console.log(data)
+    
 
-    if(data.message) {
+    if(result.ok){
       setIsLoggedIn(true)
     }}
     
@@ -33,7 +33,6 @@ function Login({setIsLoggedIn}) {
             <button style={{margin: '10px'}} onClick={SubmitLogin}>Login</button>
           </form>
         </div>
-
     )
   }
 

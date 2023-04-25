@@ -1,5 +1,4 @@
 
-
 const InputForm = ({ setPosts }) => {
   
   const handleSubmit = (e) => {
@@ -9,14 +8,16 @@ const InputForm = ({ setPosts }) => {
     const API_URL = import.meta.env.VITE_BACKEND_URL
 
     fetch(`${API_URL}api/v1/addPost`, {
+      credentials: 'include',
       method: 'POST',
       body: formData
     })
     .then(res => res.json())
     .then(data => {
+      if(!data.message){
       setPosts(data)
-      console.log(data)
-    })
+//      console.log(data)
+    }})
   }
 
   return (

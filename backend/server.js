@@ -5,7 +5,7 @@ import multer from 'multer';
 import cookieParser from 'cookie-parser';
 import nodemailer from 'nodemailer';
 import { login, register } from './controller/authController.js'
-import { encryptPassword, verifyToken } from './middleware/authMiddleware.js';
+import { encryptPassword, verifyToken, authenticate, createUserPermission, editingPerission,  } from './middleware/authMiddleware.js';
 import { addPost, getPosts, getPostById } from './utility/postController.js';
 
 
@@ -13,6 +13,7 @@ import { addPost, getPosts, getPostById } from './utility/postController.js';
 const app = express();
 const PORT = process.env.PORT || 9999
 const upload = multer({ dest: './img' })
+
 
 
 app.use(cors({
@@ -24,17 +25,26 @@ app.use('/img', express.static('./img'))
 app.use(express.json())
 app.use(cookieParser())
 
+
 app.get('/', (req, res) => {
   res.status(200).send('All good')
 })
 
-app.post('/register', encryptPassword, register)
+app.post('/register', encryptPassword, authenticate, createUserPermission, register)
 app.post('/login', encryptPassword, login)
 
 app.get('/user', verifyToken, (req, res) => {
 	console.log(req.user)
 res.end()
 })
+
+
+app.get('/api/v1/getPosts', getPosts)
+
+app.get('/api/v1/getPosts/:id', getPostById)
+
+app.post('/api/v1/addPost',upload.single('postImage'), authenticate, editingPerission, addPost)
+
 
 // nodemailer
 const  NODEMAILER_USER = process.env.NODEMAILER_USER
@@ -75,12 +85,5 @@ app.post('/api/v1/sendEmail', upload.none(), (req, res) => {
     res.json({message: 'mail sent'})
   })
 })
-
-app.get('/api/v1/getPosts', getPosts)
-
-app.get('/api/v1/getPosts/:id', getPostById)
-
-app.post('/api/v1/addPost',upload.single('postImage'), addPost)
-
 
 app.listen(PORT, () => console.log('listening on port ' + PORT))
