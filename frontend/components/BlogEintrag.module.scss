@@ -1,8 +1,12 @@
 .BlogEintrag {
-  width: 600px;
-  margin: 120px auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  width: 800px;
+  margin: 160px auto;
   text-align: left;
   img {
-    width: 600px;
+    width: 800px;
   }
 }

@@ -1,7 +1,13 @@
 .BlogPreview {
+
   img {
     width: 350px;
     margin: 0;
+    object-fit: contain;
+  }
+  p {
+    height: 300px;
+    overflow: hidden;
   }
   
 }

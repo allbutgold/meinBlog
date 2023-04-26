@@ -31,7 +31,6 @@ export const authenticate = (req, res, next) => {
     }
     try {
       const decodedToken = jwt.verify(token, secret)
-      // console.log(decodedToken._id)
       if (!decodedToken.role) {
         return res.status(403).json({ message: "Unauthorized access" })
       }

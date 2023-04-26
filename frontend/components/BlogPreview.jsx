@@ -7,8 +7,8 @@ const BlogEintrag = ({ post }) => {
   return (
     <Link key={post._id} to={"/blogdetailpage/" + post._id}>
       <div className={styles.BlogPreview}>
-      <h2>{post.title}</h2>
       <img src={`${API_URL}${post.image}`} />
+      <h2>{post.title}</h2>
     </div>
     </Link>
 
