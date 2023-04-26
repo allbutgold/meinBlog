@@ -5,7 +5,7 @@ import multer from 'multer';
 import cookieParser from 'cookie-parser';
 import nodemailer from 'nodemailer';
 import { login, register } from './controller/authController.js'
-import { encryptPassword, verifyToken, authenticate, createUserPermission, editingPerission,  } from './middleware/authMiddleware.js';
+import { encryptPassword, verifyToken, authenticate, createUserPermission, editingPermission,  } from './middleware/authMiddleware.js';
 import { addPost, getPosts, getPostById } from './utility/postController.js';
 
 
@@ -43,7 +43,7 @@ app.get('/api/v1/getPosts', getPosts)
 
 app.get('/api/v1/getPosts/:id', getPostById)
 
-app.post('/api/v1/addPost',upload.single('postImage'), authenticate, editingPerission, addPost)
+app.post('/api/v1/addPost',upload.single('postImage'), authenticate, editingPermission, addPost)
 
 
 // nodemailer

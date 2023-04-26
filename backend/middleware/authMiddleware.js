@@ -53,7 +53,7 @@ export const createUserPermission = (req, res, next) => {
   next()
 }
 
-export const editingPerission = (req, res, next) => {
+export const editingPermission = (req, res, next) => {
   if (req.user.role == 'editor' || req.user.role == 'admin') {
     next()
   }else {

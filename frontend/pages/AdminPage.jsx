@@ -12,7 +12,6 @@ const AdminPage = () => {
   return (
 
     <section style={{'marginTop': "120px"}}>
-      <h1>Admin Page</h1>
       <h3>Make new admin account</h3>
       <Register />
       <InputForm setPosts={setPosts}/>

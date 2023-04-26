@@ -11,6 +11,7 @@ import Navigation from '../components/Navigation.jsx'
 import BlogDetailPage from '../pages/BlogDetailPage.jsx'
 import ContactForm from '../components/ContactForm.jsx'
 import LandingPage from '../pages/LandingPage.jsx'
+/* import UserContext from '../context/UserContext' */
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
 
   return (
     <main className={styles.App}>
+      {/* <UserContext.Provider value={user}> */}
       <Router>
       <Navigation />
         <Routes>
@@ -29,6 +31,7 @@ function App() {
           <Route path="/login" element={<Login />} />
         </Routes>
       </Router>
+      {/* </UserContext.Provider> */}
     </main>
   )
 } 

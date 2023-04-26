@@ -4,7 +4,7 @@
 
 ### to implement:
 
-- [ ] more users with different permissions
+- [x] more users with different permissions
 - [ ] user specific light or dark theme with useContext
 - [ ] landing page with big image slider
 - [ ] register page with different permissions
