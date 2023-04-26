@@ -2,6 +2,8 @@
 
 ## playground to try new things
 
+https://meinblog-production.up.railway.app/
+
 ### to implement:
 
 - [x] more users with different permissions
