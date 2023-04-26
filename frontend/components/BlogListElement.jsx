@@ -12,7 +12,7 @@ const BlogListElement = ({ setPosts, posts}) => {
   }, [])
 
   if(!posts) return
-console.log(posts)
+// console.log(posts)
   return (
     <div>
           {posts.map((post) => {
