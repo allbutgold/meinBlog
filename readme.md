@@ -17,6 +17,7 @@ https://meinblog-production.up.railway.app/
 - [ ] add about me page
 - [ ] media queries
 - [ ] comment function for users with timestamp
+- [ ] footer
 
 ### done
 - [x] more users with different permissions

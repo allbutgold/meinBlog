@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import styles from './Login.module.scss'
 function Login({setIsLoggedIn}) {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
@@ -27,8 +28,8 @@ function Login({setIsLoggedIn}) {
     }}
     
       return (
-        <div style={{'marginTop': "120px"}}>
-          <h2>Login</h2>
+        <div className={styles.Login}>
+          <h3>Please log into your account</h3>
           {error && <p style={{color: 'red'}}>{error}</p>}
           <form>
             <label style={{padding: '10px'}} htmlFor="username">username</label>

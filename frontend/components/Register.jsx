@@ -37,7 +37,9 @@ function Register () {
     setError('')
   }
   return (
-    <form onSubmit={SubmitRegister}>
+    <div>
+      <form onSubmit={SubmitRegister}>
+      <h3>create new account</h3>
       {error && <p style={{color: 'red'}}>{error}</p>}
       {message && <p style={{color: 'green'}}>{message}</p>}
       <label style={{padding: '10px'}} htmlFor="username">username</label>
@@ -54,6 +56,8 @@ function Register () {
       <button style={{margin: '10px'}} type="submit">Register</button>
       
     </form>
+    </div>
+    
   )
 }
 export default Register

@@ -35,12 +35,13 @@ const AddGalleries = ({ setGalleries }) =>  {
 
   return (
     <div>
-      <h2>add gallery</h2>
+      <h3>create new gallery</h3>
       <form onSubmit={handleSubmit}>
+      {error && <p style={{color: 'red'}}>{error}</p>}
+        {message && <p style={{color: 'green'}}>{message}</p>}
         <input type="text" name="title" placeholder="Title"></input><br/>
         <input type="file" name='postGalleryImages' multiple/>
-        {error && <p style={{color: 'red'}}>{error}</p>}
-        {message && <p style={{color: 'green'}}>{message}</p>}
+        
         <button type="submit">upload</button>
       </form>
     </div>

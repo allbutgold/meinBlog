@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { useState } from 'react'
 import  Login  from '../components/Login.jsx'
 
-
+import ErrorPage from '../pages/ErrorPage.jsx'
 import AdminPage from '../pages/AdminPage.jsx'
 import Home from '../pages/Home.jsx'
 import Navigation from '../components/Navigation.jsx'
@@ -33,6 +33,7 @@ function App() {
           <Route path="/blogdetailpage/:id" element={<BlogDetailPage />}/>
           <Route path="/contact" element={<ContactForm />} />
           <Route path="/login" element={<Login />} />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
       </Router>
       {/* </UserContext.Provider> */}

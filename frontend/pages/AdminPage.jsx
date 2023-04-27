@@ -5,19 +5,21 @@ import InputForm from '../components/InputForm.jsx'
 import BlogListElement from '../components/BlogListElement'
 import Register from '../components/Register.jsx'
 import AddGalleries from '../components/AddGalleries.jsx'
-
+import styles from './AdminPage.module.scss'
 
 const AdminPage = () => {
   const [posts, setPosts] = useState()
 
   return (
 
-    <section style={{'marginTop': "120px"}}>
-      <h3>Make new admin account</h3>
-      <Register />
-      <InputForm setPosts={setPosts}/>
+    <section style={{'marginTop': "120px"}} className={styles.AdminPage}>
+      
+      
       <AddGalleries />
-      <BlogListElement setPosts={setPosts} posts={posts}/>
+      <InputForm setPosts={setPosts}/>
+      <Register />
+      
+      {/* <BlogListElement setPosts={setPosts} posts={posts}/> */}
       <Link to='/'>Back</Link>
     </section>
     

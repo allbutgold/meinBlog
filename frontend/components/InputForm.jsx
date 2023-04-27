@@ -37,15 +37,16 @@ const InputForm = ({ setPosts }) => {
   
   return (
     <div>
-      <h2>add post</h2>
-      
+      <h3>create new post</h3>
+      {error && <p style={{color: 'red'}}>{error}</p>}
+      {message && <p style={{color: 'green'}}>{message}</p>}
 
       <form onSubmit={handleSubmit}>
       <input type="text" name="title" placeholder="Title"></input><br/>
-      <textarea style={{margin: "20px"}} type="text" name="text" placeholder="Text" rows={15} cols={50}></textarea><br/>
       <input type="file" name="postImage"></input>
-      {error && <p style={{color: 'red'}}>{error}</p>}
-      {message && <p style={{color: 'green'}}>{message}</p>}
+      <textarea style={{margin: "20px"}} type="text" name="text" placeholder="Text" rows={15} cols={50}></textarea><br/>
+      
+      
       <button type="submit">upload</button>
       </form>
     </div>
