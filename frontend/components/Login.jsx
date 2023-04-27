@@ -3,7 +3,6 @@ function Login({setIsLoggedIn}) {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
-  const [message, setMessage] = useState('')
   const url = import.meta.env.VITE_BACKEND_URL
 
   const SubmitLogin = async (e) => {
@@ -31,7 +30,6 @@ function Login({setIsLoggedIn}) {
         <div style={{'marginTop': "120px"}}>
           <h2>Login</h2>
           {error && <p style={{color: 'red'}}>{error}</p>}
-          {message && <p style={{color: 'green'}}>{message}</p>}
           <form>
             <label style={{padding: '10px'}} htmlFor="username">username</label>
             <input type="text" name="username" value={username} onChange={(e) => setUsername(e.target.value)}/><br/>
