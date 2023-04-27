@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import InputForm from '../components/InputForm.jsx'
 import BlogListElement from '../components/BlogListElement'
 import Register from '../components/Register.jsx'
+import AddGalleries from '../components/AddGalleries.jsx'
 
 
 const AdminPage = () => {
@@ -15,6 +16,7 @@ const AdminPage = () => {
       <h3>Make new admin account</h3>
       <Register />
       <InputForm setPosts={setPosts}/>
+      <AddGalleries />
       <BlogListElement setPosts={setPosts} posts={posts}/>
       <Link to='/'>Back</Link>
     </section>

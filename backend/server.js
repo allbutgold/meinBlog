@@ -5,9 +5,9 @@ import multer from 'multer';
 import cookieParser from 'cookie-parser';
 import nodemailer from 'nodemailer';
 import { login, register } from './controller/authController.js'
-import { encryptPassword, verifyToken, authenticate, createUserPermission, editingPermission,  } from './middleware/authMiddleware.js';
+import { encryptPassword, authenticate, createUserPermission, editingPermission,  } from './middleware/authMiddleware.js';
 import { addPost, getPosts, getPostById } from './utility/postController.js';
-
+import { addGalleries, getGalleries, getGalleryById } from './controller/galleryController.js';
 
 
 const app = express();
@@ -20,25 +20,26 @@ app.use(cors({
     origin: true,
     credentials: true
 }))
-
 app.use('/img', express.static('./img'))
 app.use(express.json())
 app.use(cookieParser())
 
 
-app.get('/', (req, res) => {
-  res.status(200).send('All good')
-})
 
+// gallery routes
+app.post('/api/v1/addGallery',authenticate, editingPermission, addGalleries)
+
+app.get('/api/v1/getGalleries', getGalleries)
+
+app.get('/api/v1/getGalleries/:id', getGalleryById)
+
+// login & register
 app.post('/register', encryptPassword, authenticate, createUserPermission, register)
+
 app.post('/login', encryptPassword, login)
 
-app.get('/user', verifyToken, (req, res) => {
-	console.log(req.user)
-res.end()
-})
 
-
+// post routes
 app.get('/api/v1/getPosts', getPosts)
 
 app.get('/api/v1/getPosts/:id', getPostById)

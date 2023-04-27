@@ -14,6 +14,7 @@ const Navigation = (props) => {
         <Link to='/'>Home</Link>
         {/* { user.role === 'admin' && <Link to='/adminPage'>Admin</Link>} */}
         <Link to='/blog'>Blog</Link>
+        <Link to='/galleries'>Galleries</Link>
         {/* <Link to='/contact'>Contact</Link> */}
         <Link to='/adminPage'>Login</Link>
         {/* <button onClick={() => {props.setuser({})}}></button> */}

@@ -27,7 +27,6 @@ export const getPostById = async (req, res) => {
 }
 
 export const addPost = async (req, res) => {
-  /* if (req.user.role !== 'admin' && req.user.role !== 'editor') */ 
   try {
     req.body.image = req.file.path
     const db = await getDb()

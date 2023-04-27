@@ -11,6 +11,8 @@ import Navigation from '../components/Navigation.jsx'
 import BlogDetailPage from '../pages/BlogDetailPage.jsx'
 import ContactForm from '../components/ContactForm.jsx'
 import LandingPage from '../pages/LandingPage.jsx'
+import Galleries from '../pages/Galleries.jsx'
+import GalleriesDetailPage from '../pages/GallieriesDetailPage.jsx'
 /* import UserContext from '../context/UserContext' */
 
 
@@ -25,6 +27,8 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage/>} />
           <Route path="/blog" element={<Home/>} />
+          <Route path="/galleries" element={<Galleries/>} />
+          <Route path="/galleriesdetailpage/:id" element={<GalleriesDetailPage/>} />
           <Route path="/adminPage" element={isLoggedIn ? <AdminPage/> : <Login setIsLoggedIn={setIsLoggedIn}/>} />
           <Route path="/blogdetailpage/:id" element={<BlogDetailPage />}/>
           <Route path="/contact" element={<ContactForm />} />
