@@ -6,7 +6,10 @@ const Navigation = (props) => {
   /* const user = useContext(UserContext) */
   return (
     <section className={styles.Navigation}>
-      <img src={Logo} style={{ left: 0}} alt="" />
+      <Link to='/'> 
+        <img src={Logo} style={{ left: 0}} alt="" />
+      </Link>
+      
       <nav>
         <Link to='/'>Home</Link>
         {/* { user.role === 'admin' && <Link to='/adminPage'>Admin</Link>} */}

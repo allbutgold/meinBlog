@@ -18,8 +18,7 @@ const BlogDetailPage = () => {
 
   return (
     <div>
-        <BlogEintrag post={posts}/>
-        <Link to='/'>Back</Link>
+      <BlogEintrag post={posts}/>
     </div>
   )
 
