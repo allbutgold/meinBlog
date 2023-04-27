@@ -18,11 +18,9 @@ const GalleryPreviewList = ({ setGalleries, galleries}) => {
       <div>
             {galleries.map((gallery) => {
               return (
-              
                 <GalleryPreview gallery={gallery}/>
               )
             })}
-        
       </div>
     )
 }

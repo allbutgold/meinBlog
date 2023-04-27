@@ -3,12 +3,8 @@
   width: 90vw;
   display: flex;
   justify-content: center;
-  
-
   div {
-    
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
     a div {
       width: 350px;
@@ -26,7 +22,6 @@
         width: 100%;
         object-fit: cover;
       }
-      }
-    
+    }
   }
 }
