@@ -15,8 +15,7 @@ const GalleryPreviewList = ({ setGalleries, galleries}) => {
     console.log(galleries)
 
     return (
-      <div style={{marginTop: '160px'}}>
-        <h1>Gallery Preview list</h1>
+      <div>
             {galleries.map((gallery) => {
               return (
               
