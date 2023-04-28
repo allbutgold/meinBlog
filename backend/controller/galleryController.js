@@ -17,7 +17,7 @@ const upload = multer({
 
 export const addGalleries = async (req, res) => {
   try {
-    await upload(req, res, async function (err) {
+    upload(req, res, async function (err) {
       if (err) {
         console.log(err)
         res.status(500).end()
@@ -51,6 +51,20 @@ export const getGalleryById = async (req, res) => {
     const db = await getDb()
     const docs = await db.collection(COL).findOne({_id: new ObjectId(req.params.id)})
     res.json(docs)
+  }catch(err) {
+    console.error(err)
+    res.sendStatus(500)
+  }
+}
+
+export const deleteGalleryById = async (req, res) => {
+  try {
+    req.params.id
+
+    const db = await getDb()
+    const result = await db.collection(COL).deleteOne({_id: new ObjectId(req.params.id)})
+    console.log(result)
+    res.json({message: 'success'})
   }catch(err) {
     console.error(err)
     res.sendStatus(500)

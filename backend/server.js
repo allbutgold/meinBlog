@@ -7,7 +7,7 @@ import nodemailer from 'nodemailer';
 import { login, register } from './controller/authController.js'
 import { encryptPassword, authenticate, createUserPermission, editingPermission,  } from './middleware/authMiddleware.js';
 import { addPost, getPosts, getPostById } from './utility/postController.js';
-import { addGalleries, getGalleries, getGalleryById } from './controller/galleryController.js';
+import { addGalleries, getGalleries, getGalleryById, deleteGalleryById } from './controller/galleryController.js';
 
 
 const app = express();
@@ -29,9 +29,13 @@ app.use(cookieParser())
 // gallery routes
 app.post('/api/v1/addGallery',authenticate, editingPermission, addGalleries)
 
+app.delete('/api/v1/deleteGallery/:id', deleteGalleryById)
+
 app.get('/api/v1/getGalleries', getGalleries)
 
 app.get('/api/v1/getGalleries/:id', getGalleryById)
+
+
 
 // login & register
 app.post('/register', encryptPassword, authenticate, createUserPermission, register)

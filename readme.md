@@ -7,7 +7,6 @@ https://meinblog-production.up.railway.app/
 ## to implement:
 ### backend
 - [ ] 2FA login
-- [ ] route to delete posts and image galleries
 - [ ] make contact form functional (recive mails)
 
 ### frontend
@@ -25,3 +24,4 @@ https://meinblog-production.up.railway.app/
 - [x] register page with different permissions
 - [x] route to add image gallery with multiple images
 - [x] gallery component and page
+- [x] route to delete posts and image galleries

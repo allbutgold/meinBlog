@@ -6,6 +6,7 @@ import BlogListElement from '../components/BlogListElement'
 import Register from '../components/Register.jsx'
 import AddGalleries from '../components/AddGalleries.jsx'
 import styles from './AdminPage.module.scss'
+import ObjectList from '../components/ObjectList.jsx'
 
 const AdminPage = () => {
   const [posts, setPosts] = useState()
@@ -18,7 +19,7 @@ const AdminPage = () => {
       <AddGalleries />
       <InputForm setPosts={setPosts}/>
       <Register />
-      
+      <ObjectList/>
       {/* <BlogListElement setPosts={setPosts} posts={posts}/> */}
       <Link to='/'>Back</Link>
     </section>

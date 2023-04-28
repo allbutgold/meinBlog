@@ -2,10 +2,16 @@
   margin-top: 160px;
   width: 90vw;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
   div {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    margin: auto;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
     a div {
       width: 450px;
       height: 380px;
@@ -20,6 +26,11 @@
         width: 100%;
         object-fit: cover;
       }
+    }
+  }
+  @media only screen and (max-width: 600px){
+    div {
+      grid-template: 1fr;
     }
   }
 }
