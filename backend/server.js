@@ -29,7 +29,7 @@ app.use(cookieParser())
 // gallery routes
 app.post('/api/v1/addGallery',authenticate, editingPermission, addGalleries)
 
-app.delete('/api/v1/deleteGallery/:id', deleteGalleryById)
+app.delete('/api/v1/deleteGallery/:id', authenticate, createUserPermission, deleteGalleryById)
 
 app.get('/api/v1/getGalleries', getGalleries)
 
