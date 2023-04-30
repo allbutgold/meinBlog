@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import GalleryPreview from './GalleryPreview.jsx'
 
 const API_URL = import.meta.env.VITE_BACKEND_URL
@@ -12,13 +12,12 @@ const GalleryPreviewList = ({ setGalleries, galleries}) => {
     }, [])
 
     if(!galleries) return
-    console.log(galleries)
 
     return (
       <div>
-            {galleries.map((gallery) => {
+            {galleries.map((gallery, key) => {
               return (
-                <GalleryPreview gallery={gallery}/>
+                <GalleryPreview key={key} gallery={gallery}/>
               )
             })}
       </div>

@@ -31,6 +31,13 @@
   @media only screen and (max-width: 600px){
     div {
       grid-template: 1fr;
+      a div {
+        width: 300px;
+        img {
+          height: 200px;
+        }
+        
+      }
     }
   }
 }

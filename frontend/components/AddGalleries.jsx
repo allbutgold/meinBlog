@@ -19,7 +19,6 @@ const AddGalleries = ({ setGalleries }) =>  {
       method: 'POST',
       body: formData
     })
-    console.log(response)
     if (!response.ok) {
       setError('You are not authorized to create new galleries');
       return;

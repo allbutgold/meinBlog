@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import BlogEintrag from '../components/BlogEintrag'
+import AddComment from '../components/AddComment'
 
 
 const BlogDetailPage = () => {
@@ -18,6 +19,7 @@ const BlogDetailPage = () => {
   return (
     <div>
       <BlogEintrag post={posts}/>
+      <AddComment/>
     </div>
   )
 

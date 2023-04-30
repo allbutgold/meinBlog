@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import BlogPreview from '../components/BlogPreview.jsx'
 
 const API_URL = import.meta.env.VITE_BACKEND_URL

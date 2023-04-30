@@ -61,3 +61,11 @@ export const editingPermission = (req, res, next) => {
   
 }
 
+export const commentPermission = (req, res, next) => {
+  if (req.user.role == 'editor' || req.user.role == 'admin' || req.user.role == 'user') {
+    next()
+  }else {
+    return res.status(403).json({ message: "You need to be logged in to comment." })
+  }
+  
+}
