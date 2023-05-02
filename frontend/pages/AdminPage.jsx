@@ -7,25 +7,19 @@ import Register from '../components/Register.jsx'
 import AddGalleries from '../components/AddGalleries.jsx'
 import styles from './AdminPage.module.scss'
 import ObjectList from '../components/ObjectList.jsx'
-import PostCount from '../components/postCount.jsx'
 import UserCount from '../components/UserCount.jsx'
-import GalleriesCount from '../components/GalleriesCount.jsx'
-
 const AdminPage = () => {
   const [posts, setPosts] = useState()
 
   return (
 
     <section style={{'marginTop': "120px"}} className={styles.AdminPage}>
-      
-      
-      <AddGalleries />
       <InputForm setPosts={setPosts}/>
       <Register />
+      <AddGalleries />
+    
       <ObjectList/>
       <UserCount />
-      <PostCount />
-      <GalleriesCount />
       {/* <BlogListElement setPosts={setPosts} posts={posts}/> */}
       <Link to='/'>Back</Link>
     </section>

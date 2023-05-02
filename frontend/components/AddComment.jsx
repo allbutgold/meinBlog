@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
+import styles from './AddComment.module.scss'
 
 const URL = import.meta.env.VITE_BACKEND_URL
 
-const AddComment= () => {
+const AddComment = () => {
   const [comment, setComment] = useState("")
   const [comments, setComments] = useState([])
   const [username, setUsername] = useState("")
@@ -30,12 +31,11 @@ const AddComment= () => {
       setComments([...comments, data])
       setComment("")
     }) 
-    
-
   }
+
   console.log(comments)
   return ( 
-    <div>
+    <div className={styles.AddComment}>
       <form onSubmit={handleSubmit}>
         <label htmlFor="username">Username</label><br />
         <input type="text" value={username} name='username'  onChange={(e) => setUsername(e.target.value)} /><br /><br />
@@ -43,17 +43,20 @@ const AddComment= () => {
         <textarea name='comment' rows={10} cols={80} type="text" value={comment} onChange={(e) => setComment(e.target.value)} /><br />
         <button type="submit">Add Comment</button>
       </form>
-      <ul>
+      <div className={styles.commentsField}>
         {comments.map((comment, key) => {
           return (
-            <div style={{margin: '50px'}}>
-              <h4>{comment.username}</h4>
-              <p>{comment.timestamp}</p>
-              <p>{comment.comment}</p>
+            <div >
+              <div className={styles.singleComment}>
+                  <h4>{comment.username}</h4>
+                  <p>{comment.timestamp}</p>
+                  <p>{comment.comment}</p>
+              </div>
             </div>
           )
         })}
-      </ul>
+      </div>
+        
     </div>
   );
 }

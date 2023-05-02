@@ -67,5 +67,4 @@ export const commentPermission = (req, res, next) => {
   }else {
     return res.status(403).json({ message: "You need to be logged in to comment." })
   }
-  
 }

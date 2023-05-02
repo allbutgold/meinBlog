@@ -1,6 +1,6 @@
 # Leo's Blog
 This is going to be my portfolio website.<br />
-Also the place where I am trying to bring together all the technologies I learned during my bootcamp.
+Also the place where I am trying to bring together everything I learned during my bootcamp.
 
 If you want to checkout the administrative  level use:
 
