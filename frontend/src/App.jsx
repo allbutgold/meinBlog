@@ -2,17 +2,17 @@ import styles from './App.module.scss'
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { useState } from 'react'
-import  Login  from '../components/Login.jsx'
+import  Login  from './components/Login.jsx'
 
-import ErrorPage from '../pages/ErrorPage.jsx'
-import AdminPage from '../pages/AdminPage.jsx'
-import Home from '../pages/Home.jsx'
-import Navigation from '../components/Navigation.jsx'
-import BlogDetailPage from '../pages/BlogDetailPage.jsx'
-import ContactForm from '../components/ContactForm.jsx'
-import LandingPage from '../pages/LandingPage.jsx'
-import Galleries from '../pages/Galleries.jsx'
-import GalleriesDetailPage from '../pages/GallieriesDetailPage.jsx'
+import ErrorPage from './pages/ErrorPage.jsx'
+import AdminPage from './pages/AdminPage.jsx'
+import Home from './pages/Home.jsx'
+import Navigation from './components/Navigation.jsx'
+import BlogDetailPage from './pages/BlogDetailPage.jsx'
+import ContactForm from './components/ContactForm.jsx'
+import LandingPage from './pages/LandingPage.jsx'
+import Galleries from './pages/Galleries.jsx'
+import GalleriesDetailPage from './pages/GallieriesDetailPage.jsx'
 /* import UserContext from '../context/UserContext' */
 
 

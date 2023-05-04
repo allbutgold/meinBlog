@@ -1,8 +1,12 @@
 .AddComment {
   background-color: gainsboro;
   padding: 20px;
+  border: 1px solid black;
   form {
     margin-bottom: 80px;
+    label {
+      font-weight: 600;
+    }
     textarea {
       background-color: whitesmoke;
       color: #000;

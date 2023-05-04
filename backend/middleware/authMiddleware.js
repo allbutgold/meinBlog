@@ -1,6 +1,5 @@
 import { createHmac } from 'crypto';
 import jwt from 'jsonwebtoken';
-import { ObjectId } from 'mongodb';
 
 const secret = process.env.JWT_SECRET
 const COL = 'users'
@@ -58,7 +57,6 @@ export const editingPermission = (req, res, next) => {
   }else {
     return res.status(403).json({ message: "need editor permissions" })
   }
-  
 }
 
 export const commentPermission = (req, res, next) => {

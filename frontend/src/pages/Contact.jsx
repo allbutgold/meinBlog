@@ -1,9 +1,9 @@
-import style from './Contact.module.scss'
+import styles from './Scss/Contact.module.scss'
 import ContactForm from '../components/ContactForm.jsx'
 
 const Contact = () => {
   return ( 
-    <section className={style.Contact}>
+    <section className={styles.Contact}>
       <ContactForm/>
     </section>
 

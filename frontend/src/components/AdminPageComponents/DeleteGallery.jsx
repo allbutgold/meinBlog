@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function ObjectList() {
+function DeleteGallery() {
   const [objects, setObjects] = useState([])
   const [selectedObject, setSelectedObject] = useState('')
   const [error, setError] = useState('');
@@ -61,4 +61,4 @@ function ObjectList() {
   )
 }
 
-export default ObjectList;
+export default DeleteGallery;

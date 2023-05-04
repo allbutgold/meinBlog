@@ -1,4 +1,4 @@
-import styles from './BlogEintrag.module.scss'
+import styles from '../components/Scss/BlogEintrag.module.scss'
 import { Link } from 'react-router-dom'
 
 const API_URL = import.meta.env.VITE_BACKEND_URL

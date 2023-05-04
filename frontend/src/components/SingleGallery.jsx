@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import styles from '../components/SingleGallery.module.scss'
+import styles from '../components/Scss/SingleGallery.module.scss'
 
 const API_URL = import.meta.env.VITE_BACKEND_URL
 

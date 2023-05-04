@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const URL = import.meta.env.VITE_BACKEND_URL
 
-const UserCount = () => {
+const SiteStats = () => {
   const [userCount, setUserCount] = useState(0);
   const [galleryCount, setGalleryCount] = useState(0);
   const [commentCount, setCommentCount] = useState(0);
@@ -39,4 +39,4 @@ console.log()
   );
 }
 
-export default UserCount;
+export default SiteStats;

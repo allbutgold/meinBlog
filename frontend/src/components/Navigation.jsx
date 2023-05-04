@@ -1,6 +1,6 @@
 import { NavLink, Link, useLocation } from 'react-router-dom'
-import styles from './Navigation.module.scss'
-import Logo from '../src/assets/Logo.png'
+import styles from '../components/Scss/Navigation.module.scss'
+import Logo from '../assets/Logo.png'
 import './Navigation.css'
 
 const Navigation = (props) => {

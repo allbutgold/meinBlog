@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import styles from './LandingPage.module.scss';
+import styles from './Scss/LandingPage.module.scss';
 
 const API_URL = import.meta.env.VITE_BACKEND_URL
 
@@ -47,12 +47,12 @@ const LandingPage = () => {
         />
       )}
       {currentImageIndex !== null && (
-      <img
-      className={styles.currentImage}
-        src={`${API_URL}${image[currentImageIndex].image}`} 
-        alt="" 
-        key={image[currentImageIndex]._id}
-      />
+        <img
+          className={styles.currentImage}
+          src={`${API_URL}${image[currentImageIndex].image}`} 
+          alt="" 
+          key={image[currentImageIndex]._id}
+        />
       )}
     </section>
   );

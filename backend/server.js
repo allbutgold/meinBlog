@@ -4,9 +4,9 @@ import cors from 'cors';
 import multer from 'multer';
 import cookieParser from 'cookie-parser';
 import nodemailer from 'nodemailer';
-import { login, register } from './controller/authController.js'
+import { login, logout, register } from './controller/authController.js'
 import { encryptPassword, authenticate, createUserPermission, editingPermission, commentPermission  } from './middleware/authMiddleware.js';
-import { addPost, getPosts, getPostById } from './utility/postController.js';
+import { addPost, getPosts, getPostById } from './controller/postController.js';
 import { addGalleries, getGalleries, getGalleryById, deleteGalleryById } from './controller/galleryController.js';
 import { getUsers } from './controller/userController.js';
 import { addComment, getComments } from './controller/commentController.js';
@@ -38,7 +38,7 @@ app.get('/api/v1/getUsers', getUsers)
 // login & register
 app.post('/register', encryptPassword, authenticate, createUserPermission, register)
 app.post('/login', encryptPassword, login)
-
+app.post('/logout', logout)
 // comments routes
 app.post('/api/v1/addComment', authenticate, commentPermission, addComment)
 app.get('/api/v1/getComments', getComments)

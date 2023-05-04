@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import styles from './Login.module.scss'
+import styles from '../components/Scss/Login.module.scss'
 function Login({setIsLoggedIn}) {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
@@ -17,8 +17,6 @@ function Login({setIsLoggedIn}) {
       },
       body: JSON.stringify({username: username, password: password})
     })
-    const data = await result.json()
-    
     if (result.status === 401) {
       setError('You are not authorized to access this page')
       return

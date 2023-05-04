@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import styles from './AddComment.module.scss'
+import styles from '../components/Scss/AddComment.module.scss'
 
 const URL = import.meta.env.VITE_BACKEND_URL
 
@@ -40,7 +40,7 @@ const AddComment = () => {
         <label htmlFor="username">Username</label><br />
         <input type="text" value={username} name='username'  onChange={(e) => setUsername(e.target.value)} /><br /><br />
         <label htmlFor="comment">Comment</label><br />
-        <textarea name='comment' rows={10} cols={80} type="text" value={comment} onChange={(e) => setComment(e.target.value)} /><br />
+        <textarea name='comment' rows={10} cols={80} type="text" value={comment} onChange={(e) => setComment(e.target.value)} /><br /><br />
         <button type="submit">Add Comment</button>
       </form>
       <div className={styles.commentsField}>

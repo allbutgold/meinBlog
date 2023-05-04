@@ -1,4 +1,4 @@
-import styles from './Home.module.scss'
+import styles from './Scss/Home.module.scss'
 import BlogPreviewList from '../components/BlogPreviewList'
 import { useState } from 'react'
 
