@@ -4,8 +4,6 @@ function DeleteGallery() {
   const [objects, setObjects] = useState([])
   const [selectedObject, setSelectedObject] = useState('')
   const [error, setError] = useState('');
-  const [message, setMessage] = useState('');
-
 
   const API_URL = import.meta.env.VITE_BACKEND_URL
 
@@ -45,7 +43,6 @@ function DeleteGallery() {
     <div>
       <h3>delete existing gallery</h3>
       {error && <p style={{color: 'red'}}>{error}</p>}
-        {message && <p style={{color: 'green'}}>{message}</p>}
       <select value={selectedObject} id={objects} onChange={handleSelect}>
         <option value="">select gallery</option>
         {objects.map(item => (
