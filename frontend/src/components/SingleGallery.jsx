@@ -14,7 +14,7 @@ const SingleGallery = ({ gallery }) => {
         )
       }
       )}
-      <Link to='/galleries'>Back</Link>
+      <Link to='/galleries'>Back to galleries</Link>
     </div>
   )
 }

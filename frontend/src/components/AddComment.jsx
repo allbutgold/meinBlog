@@ -21,6 +21,7 @@ const AddComment = () => {
     e.preventDefault()
     setTimestamp()  
     fetch(`${URL}api/v1/addComment`, {
+      credentials: "include",
       method: "POST",
       headers: {
         "Content-Type": "application/json"

@@ -8,7 +8,7 @@ import { login, logout, register } from './controller/authController.js'
 import { encryptPassword, authenticate, createUserPermission, editingPermission, commentPermission  } from './middleware/authMiddleware.js';
 import { addPost, getPosts, getPostById } from './controller/postController.js';
 import { addGalleries, getGalleries, getGalleryById, deleteGalleryById } from './controller/galleryController.js';
-import { getUsers } from './controller/userController.js';
+import { getUsers, checkUserStatus } from './controller/userController.js';
 import { addComment, getComments } from './controller/commentController.js';
 
 
@@ -33,12 +33,14 @@ app.get('/api/v1/getGalleries/:id', getGalleryById)
 
 // user routes
 app.get('/api/v1/getUsers', getUsers)
+app.get('/api/v1/checkUserStatus', checkUserStatus)
 
 
 // login & register
 app.post('/register', encryptPassword, authenticate, createUserPermission, register)
 app.post('/login', encryptPassword, login)
 app.post('/logout', logout)
+
 // comments routes
 app.post('/api/v1/addComment', authenticate, commentPermission, addComment)
 app.get('/api/v1/getComments', getComments)

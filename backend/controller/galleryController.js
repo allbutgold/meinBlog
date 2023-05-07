@@ -60,7 +60,6 @@ export const getGalleryById = async (req, res) => {
 export const deleteGalleryById = async (req, res) => {
   try {
     req.params.id
-
     const db = await getDb()
     const result = await db.collection(COL).deleteOne({_id: new ObjectId(req.params.id)})
     console.log(result)

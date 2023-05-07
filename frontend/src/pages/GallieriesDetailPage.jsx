@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import SingleGallery from '../components/SingleGallery.jsx'
+import AddComment from '../components/AddComment.jsx'
 
 const GalleriesDetailPage = () => {
   const [galleries, setGalleries] = useState()
@@ -18,6 +19,7 @@ const GalleriesDetailPage = () => {
   return (
     <div>
       <SingleGallery gallery={galleries}/>
+      <AddComment />
     </div>
   )
 

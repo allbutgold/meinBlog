@@ -22,7 +22,6 @@ const BlogDetailPage = () => {
       <AddComment/>
     </div>
   )
-
 }
 
 export default BlogDetailPage

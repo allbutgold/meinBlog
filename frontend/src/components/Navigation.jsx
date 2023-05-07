@@ -1,9 +1,13 @@
 import { NavLink, Link, useLocation } from 'react-router-dom'
+import { useState } from 'react'
 import styles from '../components/Scss/Navigation.module.scss'
+import LoginStatus from './LoginStatus'
+import LogoutButton from './Logout'
 import Logo from '../assets/Logo.png'
 import './Navigation.css'
 
 const Navigation = (props) => {
+  const [LoginActive, setLoginActive] = useState(false)
   const location = useLocation()
   /* const user = useContext(UserContext) */
   return (
@@ -20,7 +24,13 @@ const Navigation = (props) => {
         {/* <Link to='/contact'>Contact</Link> */}
         <NavLink className={location.pathname === '/adminPage' ? 'active' : ''} to='/adminPage'>LOGIN</NavLink>
         {/* <button onClick={() => {props.setuser({})}}></button> */}
+        
+
       </nav>
+    <div>
+                  <LoginStatus LoginActive={LoginActive} />
+      <LogoutButton setLoginActive={setLoginActive}/>
+        </div>
   </section>
   )
 

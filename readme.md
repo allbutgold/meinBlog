@@ -14,17 +14,21 @@ https://meinblog-production.up.railway.app/
 ### backend
 - [ ] 2FA login
 - [ ] make contact form functional (recive mails)
+- [ ] use useContext to set isLoggedIn/colorTheme state globally
 
 ### frontend
-- [ ] dashboard for admin with count of registered users and posts
+- [ ] Add dark theme
+- [ ] show login or logout button based on isLoggedIn state
 - [ ] user specific light or dark theme with useContext
 - [ ] restructure component and scss folders
 - [ ] add about me page
-- [ ] media queries
+- [ ] media queries 
 - [ ] comment function for users with timestamp
 - [ ] footer
 
+
 ### done
+- [x] dashboard for admin with count of registered users and posts
 - [x] more users with different permissions
 - [x] landing page with big image slider
 - [x] register page with different permissions

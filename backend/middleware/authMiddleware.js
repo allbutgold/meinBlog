@@ -2,12 +2,10 @@ import { createHmac } from 'crypto';
 import jwt from 'jsonwebtoken';
 
 const secret = process.env.JWT_SECRET
-const COL = 'users'
 
 export const encryptPassword = (req, _, next) => {
   const hmac = createHmac('sha512', req.body.password)
   req.body.password = hmac.digest('hex')
-  console.log(req.body.password)
   next();
 }
 

@@ -12,7 +12,6 @@ const SiteStats = () => {
     fetch(`${URL}api/v1/getUsers`)
     .then(res => res.json())
     .then(data => setUserCount(data))
-    console.log(userCount)
 
     fetch(`${URL}api/v1/getGalleries`)
     .then(res => res.json())
