@@ -22,9 +22,13 @@ https://meinblog-production.up.railway.app/
 - [ ] user specific light or dark theme with useContext
 - [ ] restructure component and scss folders
 - [ ] add about me page
-- [ ] media queries 
+- [ ] 
 - [ ] comment function for users with timestamp
 - [ ] footer
+- [ ] make page to display dev projects
+- [ ] redo galleries page
+- [ ] make page mobile friendly ( media queries )
+- [ ] add cookie policies 
 
 
 ### done
