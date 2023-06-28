@@ -1,7 +1,7 @@
-import styles from '../components/Scss/BlogEintrag.module.scss'
-import { Link } from 'react-router-dom'
+import styles from "../components/Scss/BlogEintrag.module.scss";
+import { Link } from "react-router-dom";
 
-const API_URL = import.meta.env.VITE_BACKEND_URL
+const API_URL = import.meta.env.VITE_BACKEND_URL;
 
 const BlogEintrag = ({ post }) => {
   return (
@@ -11,7 +11,7 @@ const BlogEintrag = ({ post }) => {
       <p>{post.text}</p>
       <Link to='/blog'>Back</Link>
     </div>
-  )
-}
+  );
+};
 
-export default BlogEintrag
+export default BlogEintrag;

@@ -1,28 +1,27 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import styles from "./Scss/AdminPage.module.scss";
 
-import styles from './Scss/AdminPage.module.scss'
-
-import CreatePost from '../components/AdminPageComponents/CreatePost.jsx'
-import Register from '../components/AdminPageComponents/Register.jsx'
-import AddGalleries from '../components/AdminPageComponents/AddGalleries.jsx'
-import DeleteGallery from '../components/AdminPageComponents/DeleteGallery.jsx'
-import SiteStats from '../components/AdminPageComponents/SiteStats.jsx'
+import CreatePost from "../components/AdminPageComponents/CreatePost.jsx";
+import Register from "../components/AdminPageComponents/Register.jsx";
+import AddGalleries from "../components/AdminPageComponents/AddGalleries.jsx";
+import DeleteGallery from "../components/AdminPageComponents/DeleteGallery.jsx";
+import SiteStats from "../components/AdminPageComponents/SiteStats.jsx";
 
 const AdminPage = () => {
-  const [posts, setPosts] = useState()
+  const [posts, setPosts] = useState();
 
   return (
     <section className={styles.AdminPage}>
-      <CreatePost setPosts={setPosts}/>
+      <CreatePost setPosts={setPosts} />
       <Register />
       <AddGalleries />
-      <DeleteGallery/>
+      <DeleteGallery />
       <SiteStats />
       <Link to='/'>Home</Link>
-    </section> 
-  )
-}
+    </section>
+  );
+};
 
-export default AdminPage
+export default AdminPage;

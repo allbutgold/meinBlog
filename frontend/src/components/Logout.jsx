@@ -1,37 +1,34 @@
-import React from 'react';
+import React from "react";
 
-
-const LogoutButton = ({setLoginActive}) => {
-  
-  const URL = import.meta.env.VITE_BACKEND_URL
+const LogoutButton = ({ setLoginActive }) => {
+  const URL = import.meta.env.VITE_BACKEND_URL;
   const handleLogout = async () => {
     try {
-      const response = await fetch(URL + 'logout', {
-        method: 'POST',
+      const response = await fetch(URL + "logout", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-        credentials: 'include',
+        credentials: "include",
       });
 
       if (response.ok) {
         const data = await response.json();
-        setLoginActive(true)
+        setLoginActive(true);
       } else {
-        alert('Error logging out. Please try again.');
+        alert("Error logging out. Please try again.");
       }
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
     }
   };
 
   return (
     <div>
-          <button onClick={handleLogout} type="button">
-      Logout
-    </button>
+      <button onClick={handleLogout} type='button'>
+        Logout
+      </button>
     </div>
-
   );
 };
 

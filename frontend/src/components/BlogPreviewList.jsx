@@ -1,26 +1,23 @@
-import { useEffect } from 'react'
-import BlogPreview from '../components/BlogPreview.jsx'
+import { useEffect } from "react";
+import BlogPreview from "../components/BlogPreview.jsx";
 
-const API_URL = import.meta.env.VITE_BACKEND_URL
-const BlogPreviewList = ({ setPosts, posts}) => {
-
+const API_URL = import.meta.env.VITE_BACKEND_URL;
+const BlogPreviewList = ({ setPosts, posts }) => {
   useEffect(() => {
     fetch(`${API_URL}api/v1/getPosts`)
-    .then(res => res.json())
-    .then(data => setPosts(data))
-  }, [])
+      .then((res) => res.json())
+      .then((data) => setPosts(data));
+  }, []);
 
-  if(!posts) return
+  if (!posts) return;
 
   return (
     <div>
-          {posts.map((post) => {
-      return (
-          <BlogPreview key={post._id} post={post}/>
-      )
-    })}
+      {posts.map((post) => {
+        return <BlogPreview key={post._id} post={post} />;
+      })}
     </div>
-  )
-}
+  );
+};
 
-export default BlogPreviewList
+export default BlogPreviewList;

@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
-const API_URL = import.meta.env.VITE_BACKEND_URL
+const API_URL = import.meta.env.VITE_BACKEND_URL;
 
 const GalleryPreview = ({ gallery }) => {
   return (
@@ -10,7 +10,7 @@ const GalleryPreview = ({ gallery }) => {
         <h2>{gallery.title}</h2>
       </div>
     </Link>
-  )
-}
+  );
+};
 
-export default GalleryPreview
+export default GalleryPreview;

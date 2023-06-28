@@ -1,0 +1,30 @@
+.CodingProjects {
+  margin-top: 160px;
+  padding: 30px;
+  display: flex;
+
+  align-items: center;
+  article {
+    padding: 30px;
+    display: flex;
+    align-items: center;
+  }
+  @media only screen and (max-width: 728px) {
+    max-width: 500px;
+    padding: auto;
+    display: grid;
+    grid-template-row: 1fr;
+  }
+}
+
+.TextLeft {
+  width: 200px;
+  margin-right: 25px;
+  text-align: right;
+}
+
+.TextRight {
+  width: 200px;
+  margin-left: 25px;
+  text-align: left;
+}

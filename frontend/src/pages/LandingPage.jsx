@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
-import styles from './Scss/LandingPage.module.scss';
+import { useEffect, useState } from "react";
+import styles from "./Scss/LandingPage.module.scss";
 
-const API_URL = import.meta.env.VITE_BACKEND_URL
+const API_URL = import.meta.env.VITE_BACKEND_URL;
 
 const LandingPage = () => {
   const [image, setImage] = useState([]);
@@ -9,22 +9,23 @@ const LandingPage = () => {
   const [prevImageIndex, setPrevImageIndex] = useState(null);
 
   const setRandomIndex = () => {
-    if (image.length > 1 ) {
+    if (image.length > 1) {
       let randomIndex = Math.floor(Math.random() * image.length);
       while (randomIndex === currentImageIndex) {
         randomIndex = Math.floor(Math.random() * image.length);
       }
-      setPrevImageIndex(currentImageIndex)
+      setPrevImageIndex(currentImageIndex);
       setCurrentImageIndex(randomIndex);
-    }}
-  
+    }
+  };
+
   useEffect(() => {
     fetch(`${API_URL}api/v1/getPosts`)
-    .then(res => res.json())
-    .then(data => {
-      setImage(data);
-      setCurrentImageIndex(Math.floor(Math.random() * data.length));
-    })
+      .then((res) => res.json())
+      .then((data) => {
+        setImage(data);
+        setCurrentImageIndex(Math.floor(Math.random() * data.length));
+      });
   }, []);
 
   useEffect(() => {
@@ -34,28 +35,26 @@ const LandingPage = () => {
     return () => clearInterval(interval);
   }, [image, currentImageIndex]);
 
-
-
-  return ( 
+  return (
     <section className={styles.LandingPage}>
       {prevImageIndex !== null && (
         <img
           className={styles.prevImage}
           src={`${API_URL}${image[prevImageIndex].image}`}
-          alt=""
+          alt=''
           key={image[prevImageIndex]._id}
         />
       )}
       {currentImageIndex !== null && (
         <img
           className={styles.currentImage}
-          src={`${API_URL}${image[currentImageIndex].image}`} 
-          alt="" 
+          src={`${API_URL}${image[currentImageIndex].image}`}
+          alt=''
           key={image[currentImageIndex]._id}
         />
       )}
     </section>
   );
-}
+};
 
 export default LandingPage;
