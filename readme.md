@@ -22,7 +22,6 @@ https://meinblog-production.up.railway.app/
 - [ ] user specific light or dark theme with useContext
 - [ ] restructure component and scss folders
 - [ ] add about me page
-- [ ] 
 - [ ] comment function for users with timestamp
 - [ ] footer
 - [ ] make page to display dev projects

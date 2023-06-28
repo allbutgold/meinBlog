@@ -1,0 +1,21 @@
+.CodingProjects {
+  margin-top: 160px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.TextLeft {
+  p {
+    width: 200px;
+    margin-right: 25px;
+    text-align: right;
+  }
+}
+.TextRight {
+  p {
+    width: 200px;
+    margin-left: 25px;
+    text-align: left;
+  }
+}

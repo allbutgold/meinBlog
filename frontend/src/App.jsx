@@ -13,6 +13,7 @@ import ContactForm from './components/ContactForm.jsx'
 import LandingPage from './pages/LandingPage.jsx'
 import Galleries from './pages/Galleries.jsx'
 import GalleriesDetailPage from './pages/GallieriesDetailPage.jsx'
+import CodingProjects from './pages/CodingProjects'
 /* import UserContext from '../context/UserContext' */
 
 
@@ -33,6 +34,7 @@ function App() {
           <Route path="/blogdetailpage/:id" element={<BlogDetailPage />}/>
           <Route path="/contact" element={<ContactForm />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/codingprojects" element={<CodingProjects/>} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </Router>

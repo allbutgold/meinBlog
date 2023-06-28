@@ -20,7 +20,8 @@ const Navigation = (props) => {
         <NavLink className={location.pathname === '/' ? 'active' : ''} to='/'>HOME</NavLink>
         {/* { user.role === 'admin' && <Link to='/adminPage'>Admin</Link>} */}
         {/* <NavLink className={location.pathname === 'blog/' ? 'active' : ''} to='/blog'>BLOG</NavLink> */}
-        <NavLink className={location.pathname === '/galleries' ? 'active' : ''} to='/galleries'>GALLLERY</NavLink>
+        <NavLink className={location.pathname === '/galleries' ? 'active' : ''} to='/galleries'>PHOTOS</NavLink>
+        <NavLink className={location.pathname === '/codingprojects' ? 'active' : ''} to='/codingprojects'>PROJECTS</NavLink>
         {/* <Link to='/contact'>Contact</Link> */}
         <NavLink className={location.pathname === '/adminPage' ? 'active' : ''} to='/adminPage'>LOGIN</NavLink>
         {/* <button onClick={() => {props.setuser({})}}></button> */}
