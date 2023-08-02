@@ -1,39 +1,39 @@
-import { useEffect, useState } from "react";
-import styles from "./Scss/LandingPage.module.scss";
+import { useEffect, useState } from "react"
+import styles from "./Scss/LandingPage.module.scss"
 
-const API_URL = import.meta.env.VITE_BACKEND_URL;
+const API_URL = import.meta.env.VITE_BACKEND_URL
 
 const LandingPage = () => {
-  const [image, setImage] = useState([]);
-  const [currentImageIndex, setCurrentImageIndex] = useState(null);
-  const [prevImageIndex, setPrevImageIndex] = useState(null);
+  const [image, setImage] = useState([])
+  const [currentImageIndex, setCurrentImageIndex] = useState(null)
+  const [prevImageIndex, setPrevImageIndex] = useState(null)
 
   const setRandomIndex = () => {
     if (image.length > 1) {
-      let randomIndex = Math.floor(Math.random() * image.length);
+      let randomIndex = Math.floor(Math.random() * image.length)
       while (randomIndex === currentImageIndex) {
-        randomIndex = Math.floor(Math.random() * image.length);
+        randomIndex = Math.floor(Math.random() * image.length)
       }
-      setPrevImageIndex(currentImageIndex);
-      setCurrentImageIndex(randomIndex);
+      setPrevImageIndex(currentImageIndex)
+      setCurrentImageIndex(randomIndex)
     }
-  };
+  }
 
   useEffect(() => {
     fetch(`${API_URL}api/v1/getPosts`)
       .then((res) => res.json())
       .then((data) => {
-        setImage(data);
-        setCurrentImageIndex(Math.floor(Math.random() * data.length));
-      });
-  }, []);
+        setImage(data)
+        setCurrentImageIndex(Math.floor(Math.random() * data.length))
+      })
+  }, [])
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setRandomIndex();
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [image, currentImageIndex]);
+      setRandomIndex()
+    }, 5000)
+    return () => clearInterval(interval)
+  }, [image, currentImageIndex])
 
   return (
     <section className={styles.LandingPage}>
@@ -55,16 +55,16 @@ const LandingPage = () => {
           />
         )}
       </div>
-      <div className={styles.LandingPageTextContainer}>
+      {/* <div className={styles.LandingPageTextContainer}>
         <h2>
           Welcome! I'm Leo, a photographer and web developer. With a focus on
           capturing meaningful moments and crafting immersive digital
           experiences, I bring a unique blend of artistry and technical skills
           to my work.
         </h2>
-      </div>
+      </div> */}
     </section>
-  );
-};
+  )
+}
 
-export default LandingPage;
+export default LandingPage

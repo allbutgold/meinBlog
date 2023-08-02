@@ -1,14 +1,14 @@
-import { NavLink, Link, useLocation } from "react-router-dom";
-import { useState } from "react";
-import styles from "../components/Scss/Navigation.module.scss";
-import LoginStatus from "./LoginStatus";
-import LogoutButton from "./Logout";
-import Logo from "../assets/Logo.png";
-import "./Navigation.css";
+import { NavLink, Link, useLocation } from "react-router-dom"
+import { useState } from "react"
+import styles from "../components/Scss/Navigation.module.scss"
+import LoginStatus from "./LoginStatus"
+import LogoutButton from "./Logout"
+import Logo from "../assets/Logo.png"
+import "./Navigation.css"
 
 const Navigation = (props) => {
-  const [LoginActive, setLoginActive] = useState(false);
-  const location = useLocation();
+  const [LoginActive, setLoginActive] = useState(false)
+  const location = useLocation()
   /* const user = useContext(UserContext) */
   return (
     <section className={styles.Navigation}>
@@ -21,7 +21,12 @@ const Navigation = (props) => {
           HOME
         </NavLink>
         {/* { user.role === 'admin' && <Link to='/adminPage'>Admin</Link>} */}
-        {/* <NavLink className={location.pathname === 'blog/' ? 'active' : ''} to='/blog'>BLOG</NavLink> */}
+        <NavLink
+          className={location.pathname === "blog/" ? "active" : ""}
+          to='/blog'
+        >
+          BLOG
+        </NavLink>
         <NavLink
           className={location.pathname === "/galleries" ? "active" : ""}
           to='/galleries'
@@ -48,7 +53,7 @@ const Navigation = (props) => {
         <LogoutButton setLoginActive={setLoginActive} />
       </div> */}
     </section>
-  );
-};
+  )
+}
 
-export default Navigation;
+export default Navigation
