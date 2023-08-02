@@ -1,4 +1,8 @@
 .LandingPage {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
   @keyframes fadeIn {
     0% {
       opacity: 0;
@@ -7,8 +11,7 @@
       opacity: 1;
     }
   }
-  @keyframes fadeOut
-  {
+  @keyframes fadeOut {
     0% {
       opacity: 1;
     }
@@ -20,7 +23,9 @@
     height: calc(100% - 120px);
   }
 }
-
+.LandingPageImageContainer {
+  width: 300px;
+}
 .prevImage,
 .currentImage {
   position: absolute;

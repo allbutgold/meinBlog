@@ -1,0 +1,21 @@
+.LandingPage {
+  margin: 160px;
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh;
+}
+
+.LandingPageImageContainer {
+  background-image: url("../../assets/Images/LandingPage/188A1254.jpg");
+  width: 800px;
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.CallToAction {
+  h1 {
+  }
+}

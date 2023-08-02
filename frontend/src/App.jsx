@@ -13,7 +13,8 @@ import ContactForm from "./components/ContactForm.jsx";
 import LandingPage from "./pages/LandingPage.jsx";
 import Galleries from "./pages/Galleries.jsx";
 import GalleriesDetailPage from "./pages/GallieriesDetailPage.jsx";
-import CodingProjects from "./pages/CodingProjects";
+import CodingProjects from "./pages/CodingProjects.jsx";
+import NewLandingPage from "./pages/NewLandingPage.jsx";
 /* import UserContext from '../context/UserContext' */
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
       <Router>
         <Navigation />
         <Routes>
-          <Route path='/' element={<LandingPage />} />
+          <Route path='/' element={<NewLandingPage />} />
           <Route path='/blog' element={<Home />} />
           <Route path='/galleries' element={<Galleries />} />
           <Route
