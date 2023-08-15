@@ -1,13 +1,13 @@
-import { useState } from "react";
-import styles from "../components/Scss/Login.module.scss";
+import { useState } from "react"
+import styles from "../components/Scss/Login.module.scss"
 function Login({ setIsLoggedIn }) {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const url = import.meta.env.VITE_BACKEND_URL;
+  const [username, setUsername] = useState("")
+  const [password, setPassword] = useState("")
+  const [error, setError] = useState("")
+  const url = import.meta.env.VITE_BACKEND_URL
 
   const SubmitLogin = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
     const result = await fetch(url + "login", {
       method: "POST",
@@ -16,19 +16,23 @@ function Login({ setIsLoggedIn }) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ username: username, password: password }),
-    });
+    })
     if (result.status === 401) {
-      setError("You are not authorized to access this page");
-      return;
+      setError("You are not authorized to access this page")
+      return
     }
     if (result.ok) {
-      setIsLoggedIn(true);
+      setIsLoggedIn(true)
     }
-  };
+  }
 
   return (
     <div className={styles.Login}>
-      <h3>Please log into your account</h3>
+      <h2>Please log into your account</h2>
+      <h5>
+        To checkout the backend login with: <h4>user user</h4>
+      </h5>
+
       {error && <p style={{ color: "red" }}>{error}</p>}
       <form>
         <label style={{ padding: "10px" }} htmlFor='username'>
@@ -56,7 +60,7 @@ function Login({ setIsLoggedIn }) {
         </button>
       </form>
     </div>
-  );
+  )
 }
 
-export default Login;
+export default Login

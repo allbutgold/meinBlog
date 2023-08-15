@@ -21,11 +21,12 @@ const Navigation = (props) => {
           HOME
         </NavLink>
         {/* { user.role === 'admin' && <Link to='/adminPage'>Admin</Link>} */}
+
         <NavLink
-          className={location.pathname === "blog/" ? "active" : ""}
-          to='/blog'
+          className={location.pathname === "/codingprojects" ? "active" : ""}
+          to='/codingprojects'
         >
-          BLOG
+          PROJECTS
         </NavLink>
         <NavLink
           className={location.pathname === "/galleries" ? "active" : ""}
@@ -34,10 +35,10 @@ const Navigation = (props) => {
           PHOTOS
         </NavLink>
         <NavLink
-          className={location.pathname === "/codingprojects" ? "active" : ""}
-          to='/codingprojects'
+          className={location.pathname === "blog/" ? "active" : ""}
+          to='/blog'
         >
-          PROJECTS
+          BLOG
         </NavLink>
         {/* <Link to='/contact'>Contact</Link> */}
         <NavLink

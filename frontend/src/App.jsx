@@ -14,15 +14,13 @@ import LandingPage from "./pages/LandingPage.jsx"
 import Galleries from "./pages/Galleries.jsx"
 import GalleriesDetailPage from "./pages/GallieriesDetailPage.jsx"
 import CodingProjects from "./pages/CodingProjects.jsx"
-import NewLandingPage from "./pages/NewLandingPage.jsx"
-/* import UserContext from '../context/UserContext' */
+// import NewLandingPage from "./pages/NewLandingPage.jsx"
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
 
   return (
     <main className={styles.App}>
-      {/* <UserContext.Provider value={user}> */}
       <Router>
         <Navigation />
         <Routes>
@@ -50,7 +48,6 @@ function App() {
           <Route path='*' element={<ErrorPage />} />
         </Routes>
       </Router>
-      {/* </UserContext.Provider> */}
     </main>
   )
 }

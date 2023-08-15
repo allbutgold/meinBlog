@@ -1,4 +1,4 @@
-import styles from "./Scss/CodingProjects.module.scss";
+import styles from "./Scss/CodingProjects.module.scss"
 
 const ProjectElement = () => {
   return (
@@ -6,6 +6,10 @@ const ProjectElement = () => {
       <article>
         <div className={styles.TextLeft}>
           <h2>FINCO</h2>
+          <h4>
+            login with: leo@kieffer.com <br />
+            admin
+          </h4>
           <p>
             Finco is a personal finance tracker application developed as a final
             exam project for a software development boot camp. The application
@@ -20,7 +24,6 @@ const ProjectElement = () => {
           src='https://finco-frontend-production.up.railway.app/onboarding'
           height='650px'
           width='360px'
-          frameborder='0.2'
         ></iframe>
       </article>
       <article>
@@ -28,7 +31,6 @@ const ProjectElement = () => {
           src='https://clinquant-squirrel-8b4fad.netlify.app/'
           height='650px'
           width='360px'
-          frameborder='0.2'
         ></iframe>
         <div className={styles.TextRight}>
           <h2>Tasty</h2>
@@ -42,7 +44,7 @@ const ProjectElement = () => {
         </div>
       </article>
     </section>
-  );
-};
+  )
+}
 
-export default ProjectElement;
+export default ProjectElement
